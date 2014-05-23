@@ -1,0 +1,23 @@
+{
+  "name": "parse-image",
+  "version": "0.0.0",
+  "description": "parse-image ===========",
+  "main": "index.js",
+  "dependencies": {
+    "gm": "~1.16.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "brew install imagemagick; brew install graphicsmagick"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flovilmart/parse-image.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/flovilmart/parse-image/issues"
+  }
+}
