@@ -1,23 +1,28 @@
 {
   "name": "parse-image",
-  "version": "0.0.3",
-  "description": "parse-image ===========",
+  "version": "0.0.4",
+  "description": "parse-image",
   "main": "index.js",
   "dependencies": {
     "gm": "~1.16.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "preinstall": "node install.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/flovilmart/parse-image.git"
   },
-  "author": "",
+  "author": "Florent Vilmart",
   "license": "BSD",
   "bugs": {
     "url": "https://github.com/flovilmart/parse-image/issues"
-  }
+  },
+  "homepage": "https://github.com/flovilmart/parse-image",
+  "keywords": [
+    "parse",
+    "image",
+    "module"
+  ]
 }

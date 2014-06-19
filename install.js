@@ -14,9 +14,11 @@ var cmd = 'brew';
 var args = '--version > /dev/null 2>&1 && brew install imagemagick graphicsmagick'
 var exec = require('child_process').exec,
     child;
+console.log("Trying to install using brew...");
 exec(cmd+' '+args,
   function (error, stdout, stderr) {
-    console.log('' + stdout);
+    console.log(''+stdout);
+    console.log('error: '+stderr);
     if(error !== null){
         console.warn("Cannot install using brew...\n"+
                         "Please install imagemagick and "+
