@@ -9,6 +9,12 @@
 //else
 //	echo "You should install imagemagick and graphicsmagick"
 //fi
+ console.warn("Please install imagemagick and "+
+                        "graphicsmagick");
+        console.warn("parse-image will not work properly otherwise...");
+        console.warn("\n\nvisit http://www.graphicsmagick.org\n\n");
+
+return;
 
 var cmd = 'brew';
 var args = '--version > /dev/null 2>&1 && brew install imagemagick graphicsmagick'
