@@ -1,10 +1,11 @@
 {
   "name": "parse-image",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "parse-image",
   "main": "index.js",
   "dependencies": {
-    "gm": "~1.16.0"
+    "gm": "~1.16.0",
+    "parse": "^1.3.5"
   },
   "devDependencies": {},
   "scripts": {
