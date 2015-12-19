@@ -15,7 +15,6 @@ function pad() {
 			color: "#F00"
 		})
 	}).then(function(image){
-		console.log("pad");
 		assert(typeof image != 'undefined');
 		return image.data()
 	}).then(function(data){

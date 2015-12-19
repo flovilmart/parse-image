@@ -76,7 +76,6 @@ Image.prototype._callback = function(p, options){
 		if (err) {
 			error(err);
 		}else{
-			console.log("buf!");
 			self._setData(buf, p, options);
 		}
 	}
