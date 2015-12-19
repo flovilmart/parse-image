@@ -7,13 +7,11 @@ module.exports = Image = function(){}
 
 Image.prototype.setData = function(data, options){
 	var self = this;
-  	return self._setData(data, p, options);
+  	return self._setData(data, undefined, options);
 }
 
 Image.prototype._setData = function(data, p, options) {
-	if(typeof p == "undefined") {
-		p = new Parse.Promise()
-	}
+	p = p || new Parse.Promise();
 	var self = this;
 	self._data = data;
 	self._image = gm(data);
@@ -31,7 +29,7 @@ Image.prototype._setData = function(data, p, options) {
 			p.resolve(self);
 		}
   	})
-  	return p
+  	return p;
 }
 
 Image.prototype.width = function(){
@@ -78,6 +76,7 @@ Image.prototype._callback = function(p, options){
 		if (err) {
 			error(err);
 		}else{
+			console.log("buf!");
 			self._setData(buf, p, options);
 		}
 	}

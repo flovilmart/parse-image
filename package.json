@@ -1,13 +1,15 @@
 {
   "name": "parse-image",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "parse-image",
   "main": "index.js",
   "dependencies": {
-    "gm": "~1.16.0",
+    "gm": "~1.21.1",
     "parse": "^1.3.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "^2.3.4"
+  },
   "scripts": {
     "preinstall": "node install.js"
   },
