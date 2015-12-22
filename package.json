@@ -1,6 +1,6 @@
 {
   "name": "parse-image",
-  "version": "0.0.7",
+  "version": "0.0.15",
   "description": "parse-image",
   "main": "index.js",
   "dependencies": {
@@ -11,7 +11,7 @@
     "mocha": "^2.3.4"
   },
   "scripts": {
-    "preinstall": "node install.js",
+    "preinstall": "./install.sh",
     "test": "mocha"
   },
   "repository": {
