@@ -1,6 +1,9 @@
 parse-image
 ===========
 
+[![codecov.io](https://codecov.io/github/flovilmart/parse-image/coverage.svg?branch=master)](https://codecov.io/github/flovilmart/parse-image?branch=master)
+[![Build Status](https://travis-ci.org/flovilmart/parse-image.svg?branch=master)](https://travis-ci.org/flovilmart/parse-image)
+
 Port of Parse Image for parse-env based on node-gm
 
 Auto install imagemagick and graphics magick with `homebrew` on OS X OR `apt` if available.
