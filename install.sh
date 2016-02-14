@@ -8,6 +8,7 @@ convert -version > /dev/null 2>&1 && HAS_IM=1;
 
 if [[ "$HAS_GM" -eq "1" && "$HAS_IM" -eq "1" ]];
 then
+  echo "Found all dependencies";
 	exit 0;
 fi
 

@@ -1,0 +1,9 @@
+language: node_js
+sudo: required
+node_js: 
+ - "4.1"
+addons:
+  apt:
+    packages:
+      - graphicsmagick
+      - imagemagick

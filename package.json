@@ -8,18 +8,21 @@
     "parse": "^1.3.5"
   },
   "devDependencies": {
+    "codecov": "^1.0.1",
+    "image-diff": "^1.3.0",
+    "istanbul": "^0.4.2",
     "mocha": "^2.3.4"
   },
   "scripts": {
     "preinstall": "./install.sh",
-    "test": "mocha"
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec && ./node_modules/.bin/codecov"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/flovilmart/parse-image.git"
   },
   "author": "Florent Vilmart",
-  "license": "BSD",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/flovilmart/parse-image/issues"
   },
