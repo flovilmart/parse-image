@@ -1,9 +1,15 @@
 language: node_js
 sudo: required
-node_js: 
- - "4.1"
+node_js:
+- '4.1'
 addons:
   apt:
     packages:
-      - graphicsmagick
-      - imagemagick
+    - graphicsmagick
+    - imagemagick
+deploy:
+  provider: npm
+  on:
+    tags: true
+  api_key:
+    secure: KWxIggejredqctSvgYb3VTeOWsZ+71VlFXenuqhJT9FdT6ExNU7zgdGW0YSsTtPV5j5+yu+spZyBu94vQy5zxh/TL2HNmg9dC+oR7lveSxyJNn1mDK3kTFe1zXtLRxwFhhAo2Yv2ZgQkreHJZBqMRtC2/IetQX9LtvAtuQkIdxU=
