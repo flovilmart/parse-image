@@ -9,7 +9,8 @@ addons:
     - imagemagick
 deploy:
   provider: npm
-  on:
-    tags: true
+  email: florent@flovilmart.com
   api_key:
     secure: KWxIggejredqctSvgYb3VTeOWsZ+71VlFXenuqhJT9FdT6ExNU7zgdGW0YSsTtPV5j5+yu+spZyBu94vQy5zxh/TL2HNmg9dC+oR7lveSxyJNn1mDK3kTFe1zXtLRxwFhhAo2Yv2ZgQkreHJZBqMRtC2/IetQX9LtvAtuQkIdxU=
+  on:
+    tags: true
