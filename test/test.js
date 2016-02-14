@@ -19,7 +19,8 @@ function pad() {
 		return image.data()
 	}).then(function(data){
 		assert(typeof data != 'undefined');
-		fs.writeFileSync("./image-padded.jpg", data)
+    var expectedData = fs.readFileSync("./test/result-pad.jpg");
+    assert(expectedData.toString('base64') == data.toString('base64'));
 	})
 }
 
@@ -30,7 +31,7 @@ describe('Image', function() {
     it('should pad the image without error', function(done) {
 		pad().then(function(){
 			done();
-	    }).fail(function(err){
+	  }).fail(function(err){
 			console.error(err);
 			assert(err == undefined);
 			done();

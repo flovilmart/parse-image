@@ -1,4 +1,4 @@
-var gm = require('gm')
+var gm = require('gm').subClass({imageMagick: true});
 // Require parse if undefined for the promise
 if (typeof Parse == "undefined") {
 	Parse = require("parse").Parse;
