@@ -2,7 +2,7 @@ var assert = require('assert');
 var Image = require("../index.js");
 var imageDiff = require('image-diff');
 var fs = require("fs");
-  
+
 var CreateImage = function() {
 	var buf = fs.createReadStream("test/image.png");
   var image = new Image();
@@ -76,6 +76,11 @@ function cropTo(width, height) {
   },"./result-crop-"+width+"-"+height+".png",  "./test/result-crop-"+width+"-"+height+".png");
 }
 
+function quality(quality) {
+    return TestManipulation(function(image) {
+        return image.quality(quality);
+    },"./result-quality.png", "./test/result-quality.png");
+}
 
 function scale() {
   return TestManipulation(function(image){
@@ -96,7 +101,7 @@ function scaleWith(width, height) {
 
 
 describe('Image', function() {
-  
+
   describe('#pad()', function() {
     it('should pad the image without error', function(done) {
 		pad().then(function(){
@@ -107,7 +112,7 @@ describe('Image', function() {
 		})
     });
   });
-  
+
   describe('#pad()', function() {
     it('should pad the image without error', function(done) {
 		padTo(400, 500).then(function(){
@@ -118,7 +123,7 @@ describe('Image', function() {
 		})
     });
   });
-  
+
   describe('#crop()', function() {
     it('should crop the image without error', function(done) {
 		crop().then(function(){
@@ -129,7 +134,7 @@ describe('Image', function() {
 		})
     });
   });
-  
+
   describe('#crop()', function() {
     it('should crop the image without error', function(done) {
 		cropTo(100, 200).then(function(){
@@ -140,7 +145,18 @@ describe('Image', function() {
 		})
     });
   });
-  
+
+  describe('#quality()', function() {
+    it('should change quality without error', function(done) {
+      quality(50).then(function() {
+        done();
+      }).fail(function(err) {
+        assert(err == null);
+        done();
+      });
+    });
+  });
+
   describe('#scale()', function() {
     it('should scale the image at a ratio', function(done) {
 		scale().then(function(){
@@ -151,7 +167,7 @@ describe('Image', function() {
 		})
     });
   });
-  
+
   describe('#scale()', function() {
     it('should scale the image at a width and height', function(done) {
 		scaleWith(200, 100).then(function(){
@@ -162,7 +178,7 @@ describe('Image', function() {
 		})
     });
   });
-  
+
   describe('#setData()', function() {
     it('should fail setting wrong data', function(done) {
 		  var image = new Image();
@@ -171,7 +187,7 @@ describe('Image', function() {
       image.setData(buf, {
         sucess: function(){
           errHit++;
-        }, 
+        },
         error: function(err){
           errHit++;
         }
@@ -185,7 +201,7 @@ describe('Image', function() {
       })
     });
   });
-  
+
   describe('#setFormat()', function() {
     it('should set the format to JPEG', function(done) {
 		  CreateImage().then(function(image){

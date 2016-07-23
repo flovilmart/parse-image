@@ -41,6 +41,11 @@ Image.prototype.crop = function(options){
 	return _wrap(self, cropped, options);
 }
 
+Image.prototype.quality = function(quality, options) {
+	var self = this;
+	return _wrap(self, self._image.quality(quality), options);
+}
+
 Image.prototype.scale = function(options){
 	var self = this;
 	if(options.ratio){
