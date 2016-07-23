@@ -19,7 +19,7 @@ Image.prototype.height = function(){
 }
 
 Image.prototype.data = function(){
-	return this._data;
+	return Parse.Promise.as(this._data);
 }
 
 Image.prototype.crop = function(options){
