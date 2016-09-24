@@ -195,7 +195,6 @@ describe('Image', function() {
         assert(false, "Should not succeed");
         done();
       }, function(err){
-        assert.equal(1, err.code);
         assert.equal(1, errHit);
         done();
       })
