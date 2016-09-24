@@ -38,7 +38,7 @@ Image.prototype.crop = function(options){
       h = self.height()-b-t;
     }
   var cropped = self._image.extract({
-    left: l, top: t, width: w, height: h
+    left: parseInt(l), top: parseInt(t), width: parseInt(w), height: parseInt(h)
   });
   return _wrap(self, cropped, options);
 }
@@ -51,8 +51,8 @@ Image.prototype.quality = function(quality, options) {
 Image.prototype.scale = function(options){
   var self = this;
   if(options.ratio){
-    options.width = options.ratio*self.width();
-    options.height = options.ratio*self.height();
+    options.width = parseInt(options.ratio*self.width());
+    options.height = parseInt(options.ratio*self.height());
   }
   return _wrap(self, self._image.resize(options.width, options.height),options);
 }
@@ -89,7 +89,7 @@ Image.prototype.pad = function(options) {
     }
 
     var padded = self._image.background(options.color)
-      .extend({top: t, bottom: b, left: l, right: r})
+      .extend({top: parseInt(t), bottom: parseInt(b), left: parseInt(l), right: parseInt(r)})
 
     return _wrap(self, padded, options);
 }
