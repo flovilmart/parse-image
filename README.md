@@ -6,11 +6,7 @@ parse-image
 [![npm version](https://img.shields.io/npm/v/parse-image.svg?style=flat)](https://www.npmjs.com/package/parse-image)
 
 
-Port of Parse Image for parse-env based on node-gm
-
-Auto install imagemagick and graphics magick with `homebrew` on OS X OR `apt` if available.
-
-If the auto installation fails, you need to manually install imagemagick and graphicsmagick on you system.
+Port of Parse Image for parse-env based on [sharp](https://github.com/lovell/sharp)
 
 ## Installation
 
@@ -18,14 +14,8 @@ just install it as a dependency:
 
 `$ npm install --save parse-image`
 
-There is a pre-install script that will attepmt to use `brew` or `apt` to install the imagemagick and graphicsmagick.
-
-If the pre-install script fails, the installation continues but the module may not be working. (actually it won't work at all) 
+OS X, Windows (x64), Linux (x64, ARM) systems do not require the installation of any external runtime dependencies.
 
 ## Heroku installation
 
-heroku comes with imagemagick (convert) by default. 
-
-You need to manually install [heroku-buildpack-graphicsmagick](https://github.com/mcollina/heroku-buildpack-graphicsmagick) 
-
-Follow the instructions in the link and the pre-install warnings should auto-magically disappear
+See [Heroku install guide in sharp docs](http://sharp.dimens.io/en/stable/install/#heroku)

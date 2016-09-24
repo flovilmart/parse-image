@@ -4,9 +4,12 @@ node_js:
 - '4.1'
 addons:
   apt:
+    sources:
+    - ubuntu-toolchain-r-test
     packages:
-    - graphicsmagick
-    - imagemagick
+    - g++-4.8
+env:
+  CXX=g++-4.8
 deploy:
   provider: npm
   email: florent@flovilmart.com
