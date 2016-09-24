@@ -29,16 +29,19 @@ Image.prototype.crop = function(options){
   var l = options.left || 0;
   var t = options.top || 0;
 
-    var r = options.right || 0;
-    var b = options.bottom || 0;
-    if (!options.width) {
-      w = self.width()-r-l;
-    }
-    if (!options.height) {
-      h = self.height()-b-t;
-    }
+  var r = options.right || 0;
+  var b = options.bottom || 0;
+  if (!options.width) {
+    w = self.width()-r-l;
+  }
+  if (!options.height) {
+    h = self.height()-b-t;
+  }
   var cropped = self._image.extract({
-    left: parseInt(l), top: parseInt(t), width: parseInt(w), height: parseInt(h)
+    left: parseInt(l), 
+    top: parseInt(t), 
+    width: parseInt(w), 
+    height: parseInt(h)
   });
   return _wrap(self, cropped, options);
 }
@@ -51,10 +54,11 @@ Image.prototype.quality = function(quality, options) {
 Image.prototype.scale = function(options){
   var self = this;
   if(options.ratio){
-    options.width = parseInt(options.ratio*self.width());
-    options.height = parseInt(options.ratio*self.height());
+    options.width = options.ratio*self.width();
+    options.height = options.ratio*self.height();
   }
-  return _wrap(self, self._image.resize(options.width, options.height),options);
+  var scaledImg = self._image.resize(parseInt(options.width), parseInt(options.height));
+  return _wrap(self, scaledImg, options);
 }
 
 Image.prototype.setFormat = function(format,options){
@@ -76,22 +80,27 @@ Image.prototype.pad = function(options) {
   var w = options.width;
   var h = options.height;
   var l = options.left || 0;
-    var t = options.top || 0;
+  var t = options.top || 0;
 
-    var r = options.right || 0;
-    var b = options.bottom || 0;
+  var r = options.right || 0;
+  var b = options.bottom || 0;
 
-    if (options.width) {
-      r = options.width - self.width();
-    }
-    if (options.height) {
-      b = options.height - self.height();
-    }
+  if (w) {
+    r = options.width - self.width();
+  }
+  if (h) {
+    b = options.height - self.height();
+  }
 
-    var padded = self._image.background(options.color)
-      .extend({top: parseInt(t), bottom: parseInt(b), left: parseInt(l), right: parseInt(r)})
+  var padded = self._image.background(options.color)
+    .extend({
+      top: parseInt(t), 
+      bottom: parseInt(b), 
+      left: parseInt(l), 
+      right: parseInt(r)
+    });
 
-    return _wrap(self, padded, options);
+  return _wrap(self, padded, options);
 }
 
 
@@ -143,4 +152,3 @@ var callbackify = function(p, options) {
     }
   };
 }
-
