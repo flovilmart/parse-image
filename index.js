@@ -4,7 +4,8 @@ if (typeof Parse == "undefined") {
 	Parse = require("parse").Parse;
 }
 
-module.exports = Image = function(){}
+var Image = function(){};
+module.exports = Image;
 
 Image.prototype.setData = function(data, options){
   return _setData(this, data, undefined, options);
