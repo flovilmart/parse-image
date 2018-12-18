@@ -2,7 +2,7 @@
   "name": "parse-image",
   "description": "parse-image",
   "main": "index.js",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "dependencies": {
     "gm": "~1.23.1",
     "parse": "^2.0.1"
