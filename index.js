@@ -106,6 +106,12 @@ Image.prototype.pad = function(options) {
   return _wrap(self, padded, options);
 }
 
+Image.prototype.rotate = function(color, degree, options) {
+  const self = this;
+  const rotated = self._image.rotate(color, degree);
+  return _wrap(self, rotated, options);
+}
+
 var _wrap = (self, gm, options) => {
   return new Promise(
     (resolve, reject) => {
